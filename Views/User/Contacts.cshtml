@@ -269,7 +269,7 @@
                 <div id="namedetail"></div>
                 <div id="attachdetail1">
                     <div id="div">
-                        <a id="elem1234" href="#" rel="popover" data-original-title="C-TAGS" data-placement="bottom" data-html="true" data-content="">C-Tag</a>
+                        <a id="elem1234" href="#" rel="popover" data-container="body" data-original-title="C-TAGS" data-placement="bottom" data-html="true" data-content="">C-Tag</a>
                     </div>
                 </div>
                 <div id="ctagscntct" style="display:none">
@@ -486,7 +486,7 @@
 
 
     $('#elem123').popover();
-    $('#elem1234').popover();
+    $('[data-toggle="popover"]').popover();
     $('#elem123').click(function () {
 
 
@@ -654,7 +654,7 @@
 
         alert(id);
 
-        $.getJSON("editContactTag?a=" + ctag + "&i=" + id, function (data) { });
+      //  $.getJSON("editContactTag?a=" + ctag + "&i=" + id, function (data) { });
 
     }
 

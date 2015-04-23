@@ -5,17 +5,11 @@
 }
 
 <table>
+   
+        
     <tr>
-
-        <td><a class="navbar-brand" href="~/Home/Index">Home</a><br /><br /><br /></td>
-        <td></td>
-
-    </tr>
-    <tr>
-        <td></td>
-
         <td>
-            <div id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div id="loginModal" role="dialog" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -44,9 +38,7 @@
                                     <button id="checkusername" type="button" class="btn btn-primary">Check Username</button>
 
 
-                                        <div class="col-xs-1">
-                                            <i class="fa fa-lock fa-2x"></i>
-                                        </div>
+                                      
 </div>
 
 
@@ -54,14 +46,23 @@
 
                                  <div>
                                     <label for="name" class="col-xs-3">
-                                        Name:
+                                       First Name:
                                     </label>
                                     <div class="col-xs-8">
-                                        <p><input type="text" class="form-control" name="firstName" id="Name" placeholder="Enter Name" size="34" required /></p>
-                                        @*@Html.TextBox("name", "", new { @class = "form-control", name = "name", id = "name", placeholder = "Enter Name", required = "required" })
-                @Html.ValidationMessageFor(model => model.name)*@
-
-                                        @*                            <input type="text" class="form-control" name="name" id="name" placeholder="Enter Name" required>*@
+                                        <p><input type="text" class="form-control" name="firstName" id="Name" placeholder="Enter First Name" size="34" required /></p>
+                                        <br />
+                                    </div>
+                                    <div class="col-xs-1">
+                                        <i class="fa fa-lock fa-2x"></i>
+                                    </div>
+                                </div>
+                                <br />
+                                <div>
+                                    <label for="name" class="col-xs-3">
+                                        Last Name:
+                                    </label>
+                                    <div class="col-xs-8">
+                                        <p><input type="text" class="form-control" name="lastName" id="Name" placeholder="Enter last Name" size="34" required /></p>
                                         <br />
                                     </div>
                                     <div class="col-xs-1">

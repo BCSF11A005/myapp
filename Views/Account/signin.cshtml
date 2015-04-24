@@ -5,17 +5,27 @@
 }
 
 
+<div class="row">
+    <div class="container">
+        <div class="col-xs-4">
+            <img src="~/Images/filefoccipngnew.png" height="100" width="100" />
+        </div>
+        <div class="col-xs-6">
+            <img src="~/Images/filefoccititle.png" height="100" width="400" />
+        </div>
+    </div>
+</div>
+       
+            <table>
+                <tr>
 
-<table>
-    <tr>
 
 
-        
 
-        <td>
-        
+                    <td>
 
-                        <div id="loginModal"  role="dialog" aria-hidden="true">
+
+                        <div id="loginModal" role="dialog" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -57,7 +67,7 @@
                         @*<script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
 
-                    <script type='text/javascript' src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>*@
+                        <script type='text/javascript' src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>*@
 
 
                         <!-- JavaScript jQuery code from Bootply.com editor  -->
@@ -91,10 +101,10 @@
                             });
                         </script>
 
-        </td>
-    </tr>
-</table>
-
+                    </td>
+                </tr>
+            </table>
+     
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
@@ -102,7 +112,7 @@
 
     $(document).ready(function () {
         $('#signin').click(function () {
-           
+
 
             var username = $('#username').val();
             var pwd = $('#pwd').val();

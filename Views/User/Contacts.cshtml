@@ -431,7 +431,7 @@
                                     </a>
                                     <!-- <input id="fileupload" type="file" name="files[]" multiple>-->
                                     <div id="fc" class="btn btn-success fileinput-button" style="width:auto; float:left">
-
+                                        
                                         <span>Add files...</span>
 
                                     </div>
@@ -507,7 +507,8 @@ $('body').on('click', function (e) {
         }
     });
 });
-    function mail(e) {
+function mail(e) 
+{
         if (!e) var e = window.event;
         e.cancelBubble = true;
         if (e.stopPropagation) e.stopPropagation();

@@ -721,11 +721,81 @@ function cloud(e) {
                     var name = "<h2>" + data.contacta.firstName + "</h2>";
                     var htmlfiledetail = "";
                     var html = "";
+                    if (data.contacta.firstName) {
+                        html = "<tr><td>First Name</td><td>" + data.contacta.firstName + "</td></tr>";
+                    }
+                    if (data.contacta.middleName) {
+                        html += "<tr><td>Middle Name</td><td>" + data.contacta.middleName + "</td></tr>";
+                    }
+                    if (data.contacta.lastName) {
+                        html += "<tr><td>Last Name</td><td>" + data.contacta.lastName + "</td></tr>";
+                    }
+                    if (data.contacta.dob) {
+                        html += "<tr><td>Date of Birth</td><td>" + data.contacta.dob + "</td></tr>";
+                    }
+                    if (data.contacta.phoneticFirstName) {
 
-                    html = "<tr><td>First Name</td><td>" + data.contacta.firstName + "</td></tr><tr><td>Middle Name</td><td>" + data.contacta.middleName + "</td></tr><tr><td>Last Name</td><td>" + data.contacta.lastName + "</td></tr><tr><td>Date of Birth</td><td>" + data.contacta.dob + "</td></tr><tr><td>Phonetic First Name </td><td>" + data.contacta.phoneticFirstName + "</td></tr><tr><td>Phonetic Middle Name </td><td>" + data.contacta.phoneticMiddleName + "</td></tr><tr><td>Phonetic Last Name </td><td>" + data.contacta.phoneticLastName + "</td></tr><tr><td>Prefix </td><td>" + data.contacta.prefix + "</td></tr><tr><td>Suffix</td><td>" + data.contacta.suffix + "</td></tr><tr><td>Nick Name </td><td>" + data.contacta.nickName + "</td></tr><tr><td>Job Title </td><td>" + data.contacta.jobTitle + "</td></tr><tr><td>Company </td><td>" + data.contacta.company + "</td></tr><tr><td>Department</td><td>" + data.contacta.department + "</td></tr>";
+                        html += "<tr><td>Phonetic First Name </td><td>" + data.contacta.phoneticFirstName + "</td></tr>";
+                    }
+                    if (data.contacta.phoneticMiddleName) {
+
+                        html+="<tr><td>Phonetic Middle Name </td><td>" + data.contacta.phoneticMiddleName + "</td></tr>";
+                    }if (data.contacta.phoneticLastName) {
+
+                        html+="<tr><td>Phonetic Last Name </td><td>" + data.contacta.phoneticLastName + "</td></tr><tr>";
+                    }
+                    if (data.contacta.prefix) {
+
+                        html+="<td>Prefix </td><td>" + data.contacta.prefix + "</td></tr>";
+                    }
+                    if (data.contacta.suffix) {
+
+                        html+="<tr><td>Suffix</td><td>" + data.contacta.suffix + "</td></tr>";
+                    }
+                    if (data.contacta.nickName) {
+
+                        html+="<tr><td>Nick Name </td><td>" + data.contacta.nickName + "</td></tr>";
+                    }
+                    if (data.contacta.jobTitle) {
+
+                        html+="<tr><td>Job Title </td><td>" + data.contacta.jobTitle + "</td></tr>";
+                    }
+                    if (data.contacta.company) {
+
+                        html += "<tr><td>Company </td><td>" + data.contacta.company + "</td></tr>";
+                    }
+                    if (data.contacta.department) {
+
+
+                         html += "<tr><td>Department</td><td>" + data.contacta.department + "</td></tr>";
+                      }
                     for (var j in data.mobilenumlist)
                     {
                         html += "<tr><td>MobileNum</td><td>" + data.mobilenumlist[j].number + "</td></tr>";
+
+                    }
+                    for (var j in data.url) {
+                        html += "<tr><td>URL</td><td>" + data.url[j].url1 + "</td></tr>";
+
+                    }
+                    for (var j in data.email) {
+                        html += "<tr><td>Email</td><td>" + data.email[j].emailId + "</td></tr>";
+
+                    }
+                    for (var j in data.address) {
+                        html += "<tr><td>Address</td><td>" + data.address[j].address + "</td></tr>";
+
+                    }
+                    for (var j in data.date) {
+                        html += "<tr><td>Date</td><td>" + data.date[j].date + "</td></tr>";
+
+                    }
+                    for (var j in data.relativeName) {
+                        html += "<tr><td>RElative Name</td><td>" + data.relativeName[j].name + "</td></tr>";
+
+                    }
+                    for (var j in data.socialProfile) {
+                        html += "<tr><td>Social Profile</td><td>" + data.socialProfile[j].socialProfileUrl + "</td></tr>";
 
                     }
                     html += "<tr><td><a id=\"contactid\" value=\"" + data.contacta.Id + "\" href=\"EditContact?a=" + data.contacta.Id + "\"> Edit This Contact</a></td></tr>";

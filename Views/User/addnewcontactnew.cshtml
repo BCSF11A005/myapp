@@ -1,0 +1,177 @@
+﻿@{
+    ViewBag.Title = "addnewcontactnew";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+
+
+
+
+
+<style>
+  #Mobnumdiv{
+       border: 1px solid black;
+  }
+</style>
+<div class="col-xs-1">
+    </div>
+
+    <div class="col-xs-8">
+    <div class="container-fluid">
+
+        <div class="row">
+
+            <div class="col-sm-3">
+                <img src="data:image/jpg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAGRAnwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD02iiiuoyCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAoo74FWI7G5l+7C+PUjH86TaQFeitKLRZ3/1jrGPzNXI9EgXG9mc/XAqXOKHyswaK6hNOtE6QIfrz/OpVt4UOUhjU+ygVPtEPlOSorpb25traPEiKzEcJjrXNk5YnGMnoO1XGVxNWEoooqhBRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRjJAHWtC10mafDSfu09+prYt7C3tvuIC3948moc0hqLMODS7qfB2bF9X4/StGHRIV/1zs59uBWrjFFZubZaiiGK2hhx5cSKfUDmpqKKgYUUUUAFQ3UhhtZJFxlVJGamprqrqVYAqRgg0AcjJI80hkkYsx6k02ta90crl7bkf3D/SsoggkEEEdQa6E09jJqwlFFFUAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFSwQPcTCKMcn9BQA2GGSeQRxrljW/ZaXFbYd/nl9ew+lT2lpHaRBUGSfvN3JqzWEp32LUbBRRRUFBRRRQAUUUUAFFFFABRRRQAVRvdOjugWHyy9mHf61eopp22A5GaCS3kMcq4b+dR11V1ax3URRx9D3BrnLq1ktZdj855BHQ1tGdzNqxBRRRViCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAAAkgAZJ7Cul0+yFpAMj9433j/AErL0e2865MjD5Y/510NY1JdC4rqFFFFZlBRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABVe7tUuoTG457H0NWKKAORnhe3laNxgj9ajrodVtBPb+Yo/eJzwOo9K56uiMrozasFFFFUIKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigDotHjCWKtgZckn88VoVV07/kHw/7tWq5nuaLYKKKKQwooooAKKKKACiiigAooooAKKKKACiiigAooooAQ9K5S7iEF1LGOgbj6V1lc1qv/ACEpfw/kK0p7ky2KVFFFbEBRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAdTp3/IPh/3as1XsQBYwY/uD+VWK5nuaoKKKKQBRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAVzergDUXI7gfyrpK5zWP+Qi/+6K0p7ky2KFFFFbEBRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUHpRRQB1Vj/wAeMH/XNf5VYqG0XbaQj0QfyqauZ7moUUUUgCiiigAooooAKKKKACiiigAooooAKKKKACiiigArnNY/5CL/AO6K6Ouc1j/kIv8A7orSnuTLYoUUUVsQFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQB1tt/x7Rf7g/lUtRW3/HtF/uD+VS1ymoUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABXOax/yEX/3RXR1zmsf8hF/90VpT3JlsUKKKK2ICiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooq7baZPcwiVSqqemT1pNpbgdBbf8e0X+4P5VLUcKlIUQ9VUA1JXMahRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFc5rH/ACEX/wB0V0dYWqWlxLes8cTMu0cirpuzJlsZVFFFbkBRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAV02lsG06HHYEfrXM10WjkGwUejGs6mxUdzQooorEsKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAoopD0oA5K4INzKR03nH51HRRXUZBRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAVu6G+bV07h/6VhVraE4EkydyAR+v+NRP4Rx3NyiiisDQKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAqK4bbbyN6KT+lS1U1Jtunzc4yMfnQtWDOYooorqMgooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKsWM/2e8SQ/d6N9DVeik1cDsQcjNLWXo9y80TROcmPGD7VqVztWdjRO4UUUUhhRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAVj63NhEgB5J3H6Vp3EwggeRgSFGcCuWnme4maVzyf0q6cbu5MmR0UUVuQFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQBf0iUx3wXPDgj+tdHXJ2rbLuFs4w4/nXWVjUWpcdgooorMoKKKKACiiigAooooAKKKKACiiigAooooAKKKKAM3WpNtmFH8bAH6da5+tPWpN9ykYPCDn6msyt4K0TOW4UUUVYgooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACuqs5hPaRyA5JHP171yta2i3W12t2PDcrn171nUV0OL1NyiiisTQKKKKACiiigAooooAKKKKACiiigAooooAKRiFGT0FLWdq9z5NqY1PzScY9u9NK7sJmHcSme4klP8RzUVFFdBmFFFFMAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAClVijBlOGByDSUUAdNYXi3cI7SKMMKuVytizLfQ7CRlgDj0zzXVVzzjZmkXcKKKKkYUUUUAFFFFABRRRQAUUUUAFFFFAEcsixRl3OFA5Ncxd3TXc5kPA6KPQVt6ycWBx3YA1zta011IkwooorUkKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKALelru1GL2yf0rp653RgTf8dkOf0roqwqblx2CiiioKCiiigAooooAKKKKACiiigAooooAzta/48P+Biuerf1s4slA7yD+RrAransZy3CiiitBBRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRU9vZz3RPlJkDqScCk3YC9oa5nlb0UD8z/APWrdrO0uyltBJ5u3LYxg5rRrCbuzRbBRRRUjCiiigAooooAKKKKACiiigAooooAzNc/484/+ug/kawK6XUrWS7t1jjK5D5+Y+xrn7i2ltZNkq4J6YPBram9LESRFRRRWhIUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAV1dpCLe2SMDBUc/WuZt0L3MSgclxXW1lUfQqIUUUVkWFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFUNVhEti7fxJ8wNX6iuUMltKg6spA/KmnZ3BnJUUYwSD1HWiukyCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKlhtZ7g/uo2b37fnSA0dEt9zvcMPu/Kv8AWtyq9nb/AGa1jj7gc/WrFc8nd3NErIKKKKQwooooAKKKKACiiigAooooAKKKKACiiigAooooA5vVrfybwsB8snzD696o10mp2rXVsBHjepyM1z0kUkJxIjL9RW8JXRm1qMoooqxBRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFPjikmbbGjMfYVpwaI7AGd9v+yv8AjUuSW4JXMkAkgAZJ6AVet9KuZsFl8tT3br+VbkFnBbj93GAfXqasVm6nYtRM+30m3hwWHmN6t0/Kr4AUAAAAdgKWiobb3KsFFFFIAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACmsiuNrKGHoRmnUUAZs+jQSZMZMR9uR+VZc+mXUGTs3r6rzXTUVSm0S4o42iupnsbe45kjG71HBrLn0SReYXDD+63BrRVEyXFmVRT5IpIW2yIyn3FMrQQUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFWrbT7i5OVXav95uB/9ete20iCHDSDzG9+n5VDmkNRbMWCznuf9XGSP7x6Vq2+iRrhp3Ln+6OBWqqhQABgDsKWs3NspRQyOJIkCoqqB2Ap9FFQUFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAySNJV2uisPQjNZtxosTjMLGM+nUVq0U02thNXOVnsbi3yXjJX+8vIqvXYkAjBqjc6XbzglUEb/3l4/StFU7kuPY5yir1zpVxBkqPMX/Z6/lVHocVomnsTYKKKKYBRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFT21pNdNiNeO7HoK27TSoYMNIPMf1PQfhUymkNK5j22nXFzyF2J/eatm20qC3wxHmP6t/hV8DAwKKyc2y1FIMUUUVAwooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAqrcWFvcj50w394cGrVFF7Ac9c6PNFkw/vF+nNZ5BUlWBBHUGuxqvcWcF0uJEyezDqK0VTuS49jlaK0LrSJofmiPmL6Ac1nngkHqOtapp7ENWCiiimAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABWtZaQXxJc5A7J6/WptL07ywJ5h8/8KntWtWUp9EUo9xqIqKFVQAOgFOoorIsKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACqN7p0d0pYALL2Yd/rV6ihOwHISxPDI0ci4YGmV0uoWS3UORxIv3T/SubYFWKsMEcEV0RlzIzasJRRRVCCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACtDSbTz5/McZSP9TWfXR6TGI7BD3cljUTdkOKuy/RRRWBoFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFYes2m1xcoOG4f69jW5UN1CLi2eI4+YcZ9e1OLs7iaujk6KKK6TMKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAK6fTP+QfD9P60UVnU2KiW6KKKxLCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigDkJf9dJ/vGmUUV0rYyCiiimAUUUUAFFFFABRRRQAUUUUAFFFFAH//2Q==" class="img-circle" alt="" width="120" height="106">
+            </div>
+
+            <div class="col-sm-2">
+                <div class="form-group">
+
+                    <input type="text" class="form-control" name="middleName" id="Name" placeholder="Enter First Name">
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="form-group">
+
+                    <input type="text" class="form-control" name="middleName" id="Name" placeholder="Enter Last Name">
+                </div>
+            </div>
+           
+
+            <div class="col-sm-2">
+                <div class="form-group">
+
+                    <input type="text" class="form-control" name="middleName" style="height:20px;border:none" id="comapny" placeholder="company">
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+        <div class="form-group" id="numouter">
+            <div id="num">
+                <br />
+                <br />
+                <br />
+                <div id="moblabel" class="col-sm-1">
+                    <div class="form-group">
+
+                        <a data-toggle="popover" style="font-size:large" data-container="body" data-original-title="Numbers" data-placement="bottom" data-html="true" data-content="Mobilebun">Mobile</a>
+
+                    </div>
+                </div>
+                <div id="mobtextbox" class="col-sm-5">
+                    <div class="form-group">
+
+                        <input type="text" class="form-control mob1" name="middleName" id="mob1" placeholder="Phone">
+                    </div>
+                </div>
+                <br /><br /><br />
+            </div>
+            
+        </div>
+      
+          
+
+
+
+ </div>
+<div>
+    Mateen
+</div>
+<div>
+    Mateen
+</div>
+<div>
+    Mateen
+</div>
+<div>
+    Mateen
+
+</div>
+<div>
+    Mateen
+</div>
+<div>
+    Mateen
+</div>
+<div>
+    Mateen
+</div>
+<div>
+    Mateen
+</div><div>
+    Mateen
+</div><div>
+    Mateen
+</div>
+<div id="Mobnumdiv">
+
+</div>
+
+
+
+<script>
+    var i = 1;
+    var z = 1;
+  //  jQuery('.mob1').on('input', function () {
+    //    if (z == 1) {
+      //    
+        //    var mv = $('#num').html();
+          //  var tem = "";
+//
+  //          if (i == 1) {
+    //            i = i + 1;
+      //          var labelg = "<div id=\"moblabel\" class=\"col-sm-1\"><div class=\"form-group\"><a data-toggle=\"popover\" style=\"font-size:large\" data-container=\"body\" data-original-title=\"Numbers\" data-placement=\"bottom\" data-html=\"true\" data-content=\"Mobilebun\">Mobile</a></div></div>" ;
+        //        tem+=labelg;
+          //     // $('#mobtextbox').html("<input type=\"text\" class=\"form-control\" value2=\"Mobile\" name=\"MobileNo\" id=\"Name\" placeholder=\"Enter Mobile No.\"><br />");
+            //    var textboxg = "<div id=\"mobtextbox\" class=\"col-sm-5\"><div class=\"form-group\"><input type=\"text\" class=\"form-control\" name=\"middleName\" id=\"mob1\" placeholder=\"Phone\"></div></div>";
+              //  tem += textboxg;
+
+  //          }
+    //        z = z + 1;
+    //      $("#num").append(tem);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+      //  }
+   // });
+
+
+
+
+    $("#add123").click(function () {
+        var mv = $('#num').html();
+          var tem = "";
+        if (i == 1)
+        {
+
+             i = i + 1;
+             var labelg = "<div id=\"moblabel\" class=\"col-sm-1\"><div class=\"form-group\"><a data-toggle=\"popover\" style=\"font-size:large\" data-container=\"body\" data-original-title=\"Numbers\" data-placement=\"bottom\" data-html=\"true\" data-content=\"Mobilebun\">Mobile</a></div></div>" ;
+            tem+=labelg;
+             // $('#mobtextbox').html("<input type=\"text\" class=\"form-control\" value2=\"Mobile\" name=\"MobileNo\" id=\"Name\" placeholder=\"Enter Mobile No.\"><br />");
+             var textboxg = "<div id=\"mobtextbox\" class=\"col-sm-5\"><div class=\"form-group\"><input type=\"text\" class=\"form-control\" name=\"middleName\" id=\"mob1\" placeholder=\"Phone\"></div></div>";
+            tem += textboxg;
+        }
+                   
+            $("#num").append(tem);
+    
+    });
+</script>

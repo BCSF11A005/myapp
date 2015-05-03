@@ -1,0 +1,419 @@
+﻿@{
+    ViewBag.Title = "addnewcontactfinal";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<style>
+    #Mobnumdiv {
+        border: 1px solid black;
+        border-bottom:none;
+        border-left:none;
+        border-right:none;
+    }
+</style>
+
+
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-xs-2">
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#"><img src="~/Images/down.png" height="30" width="50" /><span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a onclick="abc()">Prefix</a></li>
+                    <li><a onclick="suffix()">Suffix</a></li>
+                    <li><a onclick="dob()">DOB</a></li>
+                    <li><a onclick="phfirstname()">Phonetic First Name</a></li>
+                    <li><a onclick="phmiddlename()">Phonetic Middle Name</a></li>
+                    <li><a onclick="phlastname()">Phonetic Last Name</a></li>
+                    <li><a onclick="nickname()">Nick Name</a></li>
+                    <li><a onclick="jobtitle()">Job Title</a></li>
+                    <li><a onclick="department()">Department</a></li>
+                    <li><a onclick="company()">Company</a></li>
+                    <li><a onclick="company()">Notes</a></li>
+
+                    
+                </ul>
+            </li>
+        </div>
+        <form action="addnewcontact" role="form">
+            <div class="col-xs-9">
+                <div class="container-fluid">
+
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <img src="data:image/jpg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAGRAnwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD02iiiuoyCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAoo74FWI7G5l+7C+PUjH86TaQFeitKLRZ3/1jrGPzNXI9EgXG9mc/XAqXOKHyswaK6hNOtE6QIfrz/OpVt4UOUhjU+ygVPtEPlOSorpb25traPEiKzEcJjrXNk5YnGMnoO1XGVxNWEoooqhBRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRjJAHWtC10mafDSfu09+prYt7C3tvuIC3948moc0hqLMODS7qfB2bF9X4/StGHRIV/1zs59uBWrjFFZubZaiiGK2hhx5cSKfUDmpqKKgYUUUUAFQ3UhhtZJFxlVJGamprqrqVYAqRgg0AcjJI80hkkYsx6k02ta90crl7bkf3D/SsoggkEEEdQa6E09jJqwlFFFUAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFSwQPcTCKMcn9BQA2GGSeQRxrljW/ZaXFbYd/nl9ew+lT2lpHaRBUGSfvN3JqzWEp32LUbBRRRUFBRRRQAUUUUAFFFFABRRRQAVRvdOjugWHyy9mHf61eopp22A5GaCS3kMcq4b+dR11V1ax3URRx9D3BrnLq1ktZdj855BHQ1tGdzNqxBRRRViCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAAAkgAZJ7Cul0+yFpAMj9433j/AErL0e2865MjD5Y/510NY1JdC4rqFFFFZlBRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABVe7tUuoTG457H0NWKKAORnhe3laNxgj9ajrodVtBPb+Yo/eJzwOo9K56uiMrozasFFFFUIKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigDotHjCWKtgZckn88VoVV07/kHw/7tWq5nuaLYKKKKQwooooAKKKKACiiigAooooAKKKKACiiigAooooAQ9K5S7iEF1LGOgbj6V1lc1qv/ACEpfw/kK0p7ky2KVFFFbEBRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAdTp3/IPh/3as1XsQBYwY/uD+VWK5nuaoKKKKQBRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAVzergDUXI7gfyrpK5zWP+Qi/+6K0p7ky2KFFFFbEBRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUHpRRQB1Vj/wAeMH/XNf5VYqG0XbaQj0QfyqauZ7moUUUUgCiiigAooooAKKKKACiiigAooooAKKKKACiiigArnNY/5CL/AO6K6Ouc1j/kIv8A7orSnuTLYoUUUVsQFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQB1tt/x7Rf7g/lUtRW3/HtF/uD+VS1ymoUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABXOax/yEX/3RXR1zmsf8hF/90VpT3JlsUKKKK2ICiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooq7baZPcwiVSqqemT1pNpbgdBbf8e0X+4P5VLUcKlIUQ9VUA1JXMahRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFc5rH/ACEX/wB0V0dYWqWlxLes8cTMu0cirpuzJlsZVFFFbkBRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAV02lsG06HHYEfrXM10WjkGwUejGs6mxUdzQooorEsKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAoopD0oA5K4INzKR03nH51HRRXUZBRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAVu6G+bV07h/6VhVraE4EkydyAR+v+NRP4Rx3NyiiisDQKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAqK4bbbyN6KT+lS1U1Jtunzc4yMfnQtWDOYooorqMgooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKsWM/2e8SQ/d6N9DVeik1cDsQcjNLWXo9y80TROcmPGD7VqVztWdjRO4UUUUhhRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAVj63NhEgB5J3H6Vp3EwggeRgSFGcCuWnme4maVzyf0q6cbu5MmR0UUVuQFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQBf0iUx3wXPDgj+tdHXJ2rbLuFs4w4/nXWVjUWpcdgooorMoKKKKACiiigAooooAKKKKACiiigAooooAKKKKAM3WpNtmFH8bAH6da5+tPWpN9ykYPCDn6msyt4K0TOW4UUUVYgooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACuqs5hPaRyA5JHP171yta2i3W12t2PDcrn171nUV0OL1NyiiisTQKKKKACiiigAooooAKKKKACiiigAooooAKRiFGT0FLWdq9z5NqY1PzScY9u9NK7sJmHcSme4klP8RzUVFFdBmFFFFMAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAClVijBlOGByDSUUAdNYXi3cI7SKMMKuVytizLfQ7CRlgDj0zzXVVzzjZmkXcKKKKkYUUUUAFFFFABRRRQAUUUUAFFFFAEcsixRl3OFA5Ncxd3TXc5kPA6KPQVt6ycWBx3YA1zta011IkwooorUkKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKALelru1GL2yf0rp653RgTf8dkOf0roqwqblx2CiiioKCiiigAooooAKKKKACiiigAooooAzta/48P+Biuerf1s4slA7yD+RrAransZy3CiiitBBRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRU9vZz3RPlJkDqScCk3YC9oa5nlb0UD8z/APWrdrO0uyltBJ5u3LYxg5rRrCbuzRbBRRRUjCiiigAooooAKKKKACiiigAooooAzNc/484/+ug/kawK6XUrWS7t1jjK5D5+Y+xrn7i2ltZNkq4J6YPBram9LESRFRRRWhIUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAV1dpCLe2SMDBUc/WuZt0L3MSgclxXW1lUfQqIUUUVkWFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFUNVhEti7fxJ8wNX6iuUMltKg6spA/KmnZ3BnJUUYwSD1HWiukyCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKlhtZ7g/uo2b37fnSA0dEt9zvcMPu/Kv8AWtyq9nb/AGa1jj7gc/WrFc8nd3NErIKKKKQwooooAKKKKACiiigAooooAKKKKACiiigAooooA5vVrfybwsB8snzD696o10mp2rXVsBHjepyM1z0kUkJxIjL9RW8JXRm1qMoooqxBRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFPjikmbbGjMfYVpwaI7AGd9v+yv8AjUuSW4JXMkAkgAZJ6AVet9KuZsFl8tT3br+VbkFnBbj93GAfXqasVm6nYtRM+30m3hwWHmN6t0/Kr4AUAAAAdgKWiobb3KsFFFFIAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACmsiuNrKGHoRmnUUAZs+jQSZMZMR9uR+VZc+mXUGTs3r6rzXTUVSm0S4o42iupnsbe45kjG71HBrLn0SReYXDD+63BrRVEyXFmVRT5IpIW2yIyn3FMrQQUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFWrbT7i5OVXav95uB/9ete20iCHDSDzG9+n5VDmkNRbMWCznuf9XGSP7x6Vq2+iRrhp3Ln+6OBWqqhQABgDsKWs3NspRQyOJIkCoqqB2Ap9FFQUFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAySNJV2uisPQjNZtxosTjMLGM+nUVq0U02thNXOVnsbi3yXjJX+8vIqvXYkAjBqjc6XbzglUEb/3l4/StFU7kuPY5yir1zpVxBkqPMX/Z6/lVHocVomnsTYKKKKYBRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFT21pNdNiNeO7HoK27TSoYMNIPMf1PQfhUymkNK5j22nXFzyF2J/eatm20qC3wxHmP6t/hV8DAwKKyc2y1FIMUUUVAwooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAqrcWFvcj50w394cGrVFF7Ac9c6PNFkw/vF+nNZ5BUlWBBHUGuxqvcWcF0uJEyezDqK0VTuS49jlaK0LrSJofmiPmL6Ac1nngkHqOtapp7ENWCiiimAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABWtZaQXxJc5A7J6/WptL07ywJ5h8/8KntWtWUp9EUo9xqIqKFVQAOgFOoorIsKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACqN7p0d0pYALL2Yd/rV6ihOwHISxPDI0ci4YGmV0uoWS3UORxIv3T/SubYFWKsMEcEV0RlzIzasJRRRVCCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACtDSbTz5/McZSP9TWfXR6TGI7BD3cljUTdkOKuy/RRRWBoFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFYes2m1xcoOG4f69jW5UN1CLi2eI4+YcZ9e1OLs7iaujk6KKK6TMKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAK6fTP+QfD9P60UVnU2KiW6KKKxLCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigDkJf9dJ/vGmUUV0rYyCiiimAUUUUAFFFFABRRRQAUUUUAFFFFAH//2Q==" class="img-circle" alt="" width="120" height="106">
+                        </div>
+                        <div id="namerow">
+
+                            <div class="col-xs-2">
+                                <div class="form-group">
+
+                                    <input type="text" class="form-control" name="firstName" id="Name" placeholder="First Name">
+                                </div>
+                            </div>
+                            <div class="col-xs-2">
+                                <div class="form-group">
+
+                                    <input type="text" class="form-control" name="lastName" id="Name" placeholder="Last Name">
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <br />
+                        <br />
+                        <div class="col-xs-2">
+                            <div class="form-group">
+
+                                <input type="text" class="form-control" name="company" style="height:20px;border:none" id="company" placeholder="company">
+                            </div>
+                        </div>
+
+                    </div>
+                    <br />
+
+                    <div id="numouter">
+                        <div id="num">
+                            <div id="moblabel" class="col-sm-2">
+                                <div class="form-group">
+
+                                    <a data-toggle="popover" style="font-size:large" data-container="body" data-original-title="Numbers" data-placement="bottom" data-html="true" data-content="Mobilebun">Home</a>
+
+                                </div>
+                            </div>
+                            <div id="mobtextbox" class="col-xs-10">
+                                <div class="form-group">
+
+                                    <input type="text" class="form-control mob1" name="middleName" id="mob1" placeholder="Home">
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <a id="add123" style="padding-left:20px"><img src="~/Images/plus.png" width="20" height="20" /></a>
+
+
+
+                </div>
+                <div id="Mobnumdiv">
+
+                </div>
+                <br />
+                <div class="form-group">
+                    <div id="allinfo">
+                        <div class="form-group">
+                            <label style="font-size:medium" class="control-label col-sm-2">Date of Birth:</label>
+                            <div class="col-xs-10">
+                                <input type="text" class="form-control" id="Name" name="dob" placeholder="Date Of Birth">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <br />
+                <br />
+                <div class="form-group">
+                    <div id="Mobnumdiv">
+
+                    </div>
+                </div>
+                <br />
+                <div id="emailouter">
+                    <div id="email">
+                        <div id="moblabel" class="col-sm-2">
+                            <div class="form-group">
+
+                                <a data-toggle="popover" style="font-size:large" data-container="body" data-original-title="Email" data-placement="bottom" data-html="true" data-content="Email">Email</a>
+
+                            </div>
+                        </div>
+                        <div id="mobtextbox" class="col-xs-10">
+                            <div class="form-group">
+
+                                <input type="text" class="form-control mob1" name="email" placeholder=" Enter Email">
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <br />
+                <br />
+                <br />
+                <div class="form-group">
+                    <div id="Mobnumdiv">
+
+                    </div>
+                </div>
+                <br />
+                <br />
+                <button type="submit" class="btn btn-primary" style="width:850px" value="Update">Add Contact</button>
+
+                </form>
+
+            </div>
+</div>
+</div>
+
+
+
+
+
+
+
+<script>
+    $('#pp').hide();
+
+
+    $('[data-toggle="popover"]').popover();
+
+    var suf = 1;
+    var pre = 1;
+
+
+    function suffix() {
+        if (suf == 1) {
+            var temp = "<div class=\"col-xs-2\"><div class=\"form-group\"><input type=\"text\" class=\"form-control\" name=\"prefix\" id=\"Name\" placeholder=\"Suffix\"></div></div>";
+            $('#namerow').append(temp);
+            suf = suf + 1;
+        }
+
+    };
+    function abc() {
+        if (pre == 1) {
+            //var html = $('#namerow').html();
+            var temp = "<div class=\"col-xs-2\"><div class=\"form-group\"><input type=\"text\" class=\"form-control\" name=\"suffix\" id=\"Name\" placeholder=\"PreFix\"></div></div>";
+            $('#namerow').prepend(temp);
+            pre = pre + 1;
+        }
+
+    }
+
+    function dob()
+    {
+     //   var temp = " <br /><br /><label style=\"font-size:medium\" class=\"control-label col-sm-2\">Date of Birth:</label><div class=\"col-xs-10\"><input type=\"text\" class=\"form-control\" id=\"Name\" name=\"dob\" placeholder=\"dob\"></div>";
+       // $('#allinfo').append(temp);
+
+    }
+    var pfn = 1;
+    var pmn = 1;
+    var pln = 1;
+
+    function phfirstname()
+    {
+        if (pfn == 1) {
+            var temp = "<br /><br /><div class=\"form-group\"><label style=\"font-size:small\" class=\"control-label col-sm-2\">Phonetic First Name:</label><div class=\"col-xs-10\"><input type=\"text\" class=\"form-control\" id=\"Name\" name=\"phoneticFirstName\" placeholder=\" Phontetic Fristname\"></div></div>";
+            $('#allinfo').append(temp);
+            pfn = pfn + 1;
+
+        }
+
+    }
+    function phmiddlename() {
+        if (pmn == 1) {
+
+            var temp = "<br /><br /><div class=\"form-group\"><label style=\"font-size:small\" class=\"control-label col-sm-2\">Phonetic Middle Name:</label><div class=\"col-xs-10\"><input type=\"text\" class=\"form-control\" id=\"Name\" name=\"phoneticMiddleName\" placeholder=\" Phontetic Middlename\"></div></div>";
+            $('#allinfo').append(temp);
+            pmn = pmn + 1;
+        }
+    }
+    function phlastname() {
+        if (pln == 1) {
+
+            var temp = "<br /><br /><div class=\"form-group\"><label style=\"font-size:small\" class=\"control-label col-sm-2\">Phonetic Last Name:</label><div class=\"col-xs-10\"><input type=\"text\" class=\"form-control\" id=\"Name\" name=\"phoneticLastName\" placeholder=\" Phontetic Lastname\"></div></div>";
+            $('#allinfo').append(temp);
+            pln = pln + 1;
+        }
+
+    }
+    var nm = 1;
+    var tm = 1;
+    var dm = 1;
+
+    function nickname() {
+        if (nm == 1) {
+            var temp = "<br /><br /><div class=\"form-group\"><label style=\"font-size:medium\" class=\"control-label col-sm-2\">Nickname:</label><div class=\"col-xs-10\"><input type=\"text\" class=\"form-control\" id=\"Name\" name=\"nickName\" placeholder=\" Nickname\"></div></div>";
+            $('#allinfo').append(temp);
+            nm = nm + 1;
+        }
+
+    }
+    function jobtitle() {
+        if (tm == 1) {
+
+            var temp = "<br /><br /><div class=\"form-group\"><label style=\"font-size:medium\" class=\"control-label col-sm-2\">Job Title:</label><div class=\"col-xs-10\"><input type=\"text\" class=\"form-control\" id=\"Name\" name=\"jobTitle\" placeholder=\" Job Title\"></div></div>";
+            $('#allinfo').append(temp);
+            tm = tm + 1;
+        }
+    }
+    function department() {
+        if (dm == 1) {
+
+            var temp = "<br /><br /><div class=\"form-group\"><label style=\"font-size:medium\" class=\"control-label col-sm-2\">Department:</label><div class=\"col-xs-10\"><input type=\"text\" class=\"form-control\" id=\"Name\" name=\"department\" placeholder=\" Department\"></div></div>";
+            $('#allinfo').append(temp);
+            dm = dm + 1;
+
+        }
+
+    }
+    function company() {
+       // var temp = "<br /><br /><div class=\"form-group\"><label style=\"font-size:medium\" class=\"control-label col-sm-2\">Company:</label><div class=\"col-xs-10\"><input type=\"text\" class=\"form-control\" id=\"Name\" name=\"company\" placeholder=\" Company\"></div></div>";
+       // $('#allinfo').append(temp);
+
+    }
+    function notes() {
+        var temp = "<br /><br /><div class=\"form-group\"><label style=\"font-size:medium\" class=\"control-label col-sm-2\">Notes:</label><div class=\"col-xs-10\"><input type=\"text\" class=\"form-control\" id=\"Name\" name=\"note\" placeholder=\" Notes\"></div></div>";
+        $('#allinfo').append(temp);
+
+    }
+
+
+
+    var i = 1;
+    var z = 1;
+   /* jQuery('.mob1').on('input', function () {
+      //  if (z == 1) {
+
+            var mv = $('#num').html();
+            var tem = "";
+
+            if (i == 1) {
+                i = i + 1;
+                var labelg = "<div id=\"moblabel\" class=\"col-sm-1\"><div class=\"form-group\"><a data-toggle=\"popover\" style=\"font-size:large\" data-container=\"body\" data-original-title=\"Numbers\" data-placement=\"bottom\" data-html=\"true\" data-content=\"Mobilebun\">Mobile</a></div></div>";
+                tem += labelg;
+                // $('#mobtextbox').html("<input type=\"text\" class=\"form-control\" value2=\"Mobile\" name=\"MobileNo\" id=\"Name\" placeholder=\"Enter Mobile No.\"><br />");
+                var textboxg = "<div id=\"mobtextbox\" class=\"col-sm-5\"><div class=\"form-group\"><input type=\"text\" class=\"form-control\" name=\"middleName\" id=\"mob1\" placeholder=\"Phone\"></div></div>";
+                tem += textboxg;
+                i = i + 1;
+            }
+
+            else {
+                if (i == 2) {
+                    i = i + 1;
+                    var labelg = "<div id=\"moblabel\" class=\"col-sm-1\"><div class=\"form-group\"><a data-toggle=\"popover\" style=\"font-size:large\" data-container=\"body\" data-original-title=\"Numbers\" data-placement=\"bottom\" data-html=\"true\" data-content=\"Mobilebun\">Mobile</a></div></div>";
+                    tem += labelg;
+                    // $('#mobtextbox').html("<input type=\"text\" class=\"form-control\" value2=\"Mobile\" name=\"MobileNo\" id=\"Name\" placeholder=\"Enter Mobile No.\"><br />");
+                    var textboxg = "<div id=\"mobtextbox\" class=\"col-sm-5\"><div class=\"form-group\"><input type=\"text\" class=\"form-control\" name=\"middleName\" id=\"mob1\" placeholder=\"Phone\"></div></div>";
+                    tem += textboxg;
+
+                }
+            }
+           // z = z + 1;
+            $("#num").append(tem);
+       // }
+    });
+    */
+
+
+
+
+    $("#add123").click(function () {
+        var mv = $('#num').html();
+        var tem = "";
+        if (i==1) {
+
+            i = i + 1;
+            var labelg = " <br /><br /><br /><div id=\"moblabel\" class=\"col-sm-2\"><div class=\"form-group\"><a onclick=\"abc()\" data-toggle=\"popover\" style=\"font-size:large\" data-container=\"body\" data-original-title=\"Numbers\" data-placement=\"bottom\" data-html=\"true\" data-content=\"Mobilebun\">IPhone</a></div></div>";
+            tem += labelg;
+            // $('#mobtextbox').html("<input type=\"text\" class=\"form-control\" value2=\"Mobile\" name=\"MobileNo\" id=\"Name\" placeholder=\"Enter Mobile No.\"><br />");
+            var textboxg = "<div id=\"mobtextbox\" class=\"col-sm-10\"><div class=\"form-group\"><input type=\"text\" class=\"form-control\" name=\"MobileNo\" id=\"mob1\" placeholder=\"IPhone\"></div></div>";
+            tem += textboxg;
+        }
+        else {
+            if (i == 2) {
+
+                i = i + 1;
+                var labelg = " <br /><br /><br /><div id=\"moblabel\" class=\"col-sm-2\"><div class=\"form-group\"><a onclick=\"abc()\" data-toggle=\"popover\" style=\"font-size:large\" data-container=\"body\" data-original-title=\"Numbers\" data-placement=\"bottom\" data-html=\"true\" data-content=\"Mobilebun\">Mobile</a></div></div>";
+                tem += labelg;
+                // $('#mobtextbox').html("<input type=\"text\" class=\"form-control\" value2=\"Mobile\" name=\"MobileNo\" id=\"Name\" placeholder=\"Enter Mobile No.\"><br />");
+                var textboxg = "<div id=\"mobtextbox\" class=\"col-sm-10\"><div class=\"form-group\"><input type=\"text\" class=\"form-control\" name=\"MobileNo\" id=\"mob1\" placeholder=\"Mobile\"></div></div>";
+                tem += textboxg;
+            } else {
+                if (i == 3) {
+
+                    i = i + 1;
+                    var labelg = " <br /><br /><br /><div id=\"moblabel\" class=\"col-sm-2\"><div class=\"form-group\"><a onclick=\"abc()\" data-toggle=\"popover\" style=\"font-size:large\" data-container=\"body\" data-original-title=\"Numbers\" data-placement=\"bottom\" data-html=\"true\" data-content=\"Mobilebun\">Main</a></div></div>";
+                    tem += labelg;
+                    // $('#mobtextbox').html("<input type=\"text\" class=\"form-control\" value2=\"Mobile\" name=\"MobileNo\" id=\"Name\" placeholder=\"Enter Mobile No.\"><br />");
+                    var textboxg = "<div id=\"mobtextbox\" class=\"col-sm-10\"><div class=\"form-group\"><input type=\"text\" class=\"form-control\" name=\"MobileNo\" id=\"mob1\" placeholder=\"Main\"></div></div>";
+                    tem += textboxg;
+                }
+                else {
+                    if (i == 4) {
+
+                        i = i + 1;
+                        var labelg = " <br /><br /><br /><div id=\"moblabel\" class=\"col-sm-2\"><div class=\"form-group\"><a onclick=\"abc()\" data-toggle=\"popover\" style=\"font-size:large\" data-container=\"body\" data-original-title=\"Numbers\" data-placement=\"bottom\" data-html=\"true\" data-content=\"Mobilebun\">Home Fax</a></div></div>";
+                        tem += labelg;
+                        // $('#mobtextbox').html("<input type=\"text\" class=\"form-control\" value2=\"Mobile\" name=\"MobileNo\" id=\"Name\" placeholder=\"Enter Mobile No.\"><br />");
+                        var textboxg = "<div id=\"mobtextbox\" class=\"col-sm-10\"><div class=\"form-group\"><input type=\"text\" class=\"form-control\" name=\"MobileNo\" id=\"mob1\" placeholder=\"Home Fax\"></div></div>";
+                        tem += textboxg;
+                    }
+                    else {
+                        if (i == 5) {
+
+                            i = i + 1;
+                            var labelg = " <br /><br /><br /><div id=\"moblabel\" class=\"col-sm-2\"><div class=\"form-group\"><a onclick=\"abc()\" data-toggle=\"popover\" style=\"font-size:large\" data-container=\"body\" data-original-title=\"Numbers\" data-placement=\"bottom\" data-html=\"true\" data-content=\"Mobilebun\">Work Fax</a></div></div>";
+                            tem += labelg;
+                            // $('#mobtextbox').html("<input type=\"text\" class=\"form-control\" value2=\"Mobile\" name=\"MobileNo\" id=\"Name\" placeholder=\"Enter Mobile No.\"><br />");
+                            var textboxg = "<div id=\"mobtextbox\" class=\"col-sm-10\"><div class=\"form-group\"><input type=\"text\" class=\"form-control\" name=\"MobileNo\" id=\"mob1\" placeholder=\"Work Fax\"></div></div>";
+                            tem += textboxg;
+                        }
+                        else {
+                            if (i == 6) {
+
+                                i = i + 1;
+                                var labelg = " <br /><br /><br /><div id=\"moblabel\" class=\"col-sm-2\"><div class=\"form-group\"><a onclick=\"abc()\" data-toggle=\"popover\" style=\"font-size:large\" data-container=\"body\" data-original-title=\"Numbers\" data-placement=\"bottom\" data-html=\"true\" data-content=\"Mobilebun\">Pager</a></div></div>";
+                                tem += labelg;
+                                // $('#mobtextbox').html("<input type=\"text\" class=\"form-control\" value2=\"Mobile\" name=\"MobileNo\" id=\"Name\" placeholder=\"Enter Mobile No.\"><br />");
+                                var textboxg = "<div id=\"mobtextbox\" class=\"col-sm-10\"><div class=\"form-group\"><input type=\"text\" class=\"form-control\" name=\"MobileNo\" id=\"mob1\" placeholder=\"Pager\"></div></div>";
+                                tem += textboxg;
+                            }
+                            else {
+                                if (i == 7) {
+
+                                    i = i + 1;
+                                    var labelg = " <br /><br /><br /><div id=\"moblabel\" class=\"col-sm-2\"><div class=\"form-group\"><a onclick=\"abc()\" data-toggle=\"popover\" style=\"font-size:large\" data-container=\"body\" data-original-title=\"Numbers\" data-placement=\"bottom\" data-html=\"true\" data-content=\"Mobilebun\">Other</a></div></div>";
+                                    tem += labelg;
+                                    // $('#mobtextbox').html("<input type=\"text\" class=\"form-control\" value2=\"Mobile\" name=\"MobileNo\" id=\"Name\" placeholder=\"Enter Mobile No.\"><br />");
+                                    var textboxg = "<div id=\"mobtextbox\" class=\"col-sm-10\"><div class=\"form-group\"><input type=\"text\" class=\"form-control\" name=\"MobileNo\" id=\"mob1\" placeholder=\"Other\"></div></div>";
+                                    tem += textboxg;
+                                } else {
+
+                                    var person = prompt("Please enter Label Name", "Mobile");
+
+                                    if (person != null) {
+                                        var labelg = " <br /><br /><br /><div id=\"moblabel\" class=\"col-sm-2\"><div class=\"form-group\"><a onclick=\"abc()\" data-toggle=\"popover\" style=\"font-size:large\" data-container=\"body\" data-original-title=\"Numbers\" data-placement=\"bottom\" data-html=\"true\" data-content=\"Mobilebun\">"+person+"</a></div></div>";
+                                        tem += labelg;
+                                        // $('#mobtextbox').html("<input type=\"text\" class=\"form-control\" value2=\"Mobile\" name=\"MobileNo\" id=\"Name\" placeholder=\"Enter Mobile No.\"><br />");
+                                        var textboxg = "<div id=\"mobtextbox\" class=\"col-sm-10\"><div class=\"form-group\"><input type=\"text\" class=\"form-control\" name=\"MobileNo\" id=\"mob1\" placeholder=\"" + person + "\"></div></div>";
+                                        tem += textboxg;
+
+
+                                    }
+
+                                }
+
+                            }
+
+                        }
+
+
+                    }
+
+                }
+
+            }
+
+        }
+
+
+        $("#num").append(tem);
+
+    });
+</script>

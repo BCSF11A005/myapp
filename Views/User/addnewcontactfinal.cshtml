@@ -87,7 +87,7 @@
                             <div id="mobtextbox" class="col-xs-10">
                                 <div class="form-group">
 
-                                    <input type="text" class="form-control mob1" name="middleName" id="mob1" placeholder="Home">
+                                    <input type="text" class="form-control mob1" name="MobileNo" id="mob1" value2="Home" placeholder="Home">
                                 </div>
                             </div>
 
@@ -153,13 +153,12 @@
                 </div>
                 <br />
                 <br />
-                <button type="submit" class="btn btn-primary" style="width:850px" value="Update">Add Contact</button>
-
+                <button type="submit" onclick="trygg()" class="btn btn-primary" style="width:850px" value="Update">Add Contact</button>
                 </form>
 
             </div>
 </div>
-</div>
+<!--<button id="tryg" onclick="tryg()">try</button>-->  
 
 
 
@@ -169,6 +168,22 @@
 
 <script>
     $('#pp').hide();
+
+    function trygg()
+    {
+        var ftag = "";
+        $('input[name="MobileNo"]').each(function () {
+            if ($(this).val().length != 0) {
+
+
+                ftag += this.value + ";" + $(this).attr('value2') + ",";
+            }
+        });
+
+
+        alert(ftag);
+        $.getJSON("addmobilelabelsinnewcontact?f=" + ftag, function (data) { });
+    }
 
 
     $('[data-toggle="popover"]').popover();
@@ -322,7 +337,7 @@
             var labelg = " <br /><br /><br /><div id=\"moblabel\" class=\"col-sm-2\"><div class=\"form-group\"><a onclick=\"abc()\" data-toggle=\"popover\" style=\"font-size:large\" data-container=\"body\" data-original-title=\"Numbers\" data-placement=\"bottom\" data-html=\"true\" data-content=\"Mobilebun\">IPhone</a></div></div>";
             tem += labelg;
             // $('#mobtextbox').html("<input type=\"text\" class=\"form-control\" value2=\"Mobile\" name=\"MobileNo\" id=\"Name\" placeholder=\"Enter Mobile No.\"><br />");
-            var textboxg = "<div id=\"mobtextbox\" class=\"col-sm-10\"><div class=\"form-group\"><input type=\"text\" class=\"form-control\" name=\"MobileNo\" id=\"mob1\" placeholder=\"IPhone\"></div></div>";
+            var textboxg = "<div id=\"mobtextbox\" class=\"col-sm-10\"><div class=\"form-group\"><input type=\"text\" class=\"form-control\" name=\"MobileNo\" id=\"mob1\" value2=\"IPhone\" placeholder=\"IPhone\"></div></div>";
             tem += textboxg;
         }
         else {
@@ -332,7 +347,7 @@
                 var labelg = " <br /><br /><br /><div id=\"moblabel\" class=\"col-sm-2\"><div class=\"form-group\"><a onclick=\"abc()\" data-toggle=\"popover\" style=\"font-size:large\" data-container=\"body\" data-original-title=\"Numbers\" data-placement=\"bottom\" data-html=\"true\" data-content=\"Mobilebun\">Mobile</a></div></div>";
                 tem += labelg;
                 // $('#mobtextbox').html("<input type=\"text\" class=\"form-control\" value2=\"Mobile\" name=\"MobileNo\" id=\"Name\" placeholder=\"Enter Mobile No.\"><br />");
-                var textboxg = "<div id=\"mobtextbox\" class=\"col-sm-10\"><div class=\"form-group\"><input type=\"text\" class=\"form-control\" name=\"MobileNo\" id=\"mob1\" placeholder=\"Mobile\"></div></div>";
+                var textboxg = "<div id=\"mobtextbox\" class=\"col-sm-10\"><div class=\"form-group\"><input type=\"text\" class=\"form-control\" name=\"MobileNo\" id=\"mob1\" value2=\"Mobile\" placeholder=\"Mobile\"></div></div>";
                 tem += textboxg;
             } else {
                 if (i == 3) {
@@ -341,7 +356,7 @@
                     var labelg = " <br /><br /><br /><div id=\"moblabel\" class=\"col-sm-2\"><div class=\"form-group\"><a onclick=\"abc()\" data-toggle=\"popover\" style=\"font-size:large\" data-container=\"body\" data-original-title=\"Numbers\" data-placement=\"bottom\" data-html=\"true\" data-content=\"Mobilebun\">Main</a></div></div>";
                     tem += labelg;
                     // $('#mobtextbox').html("<input type=\"text\" class=\"form-control\" value2=\"Mobile\" name=\"MobileNo\" id=\"Name\" placeholder=\"Enter Mobile No.\"><br />");
-                    var textboxg = "<div id=\"mobtextbox\" class=\"col-sm-10\"><div class=\"form-group\"><input type=\"text\" class=\"form-control\" name=\"MobileNo\" id=\"mob1\" placeholder=\"Main\"></div></div>";
+                    var textboxg = "<div id=\"mobtextbox\" class=\"col-sm-10\"><div class=\"form-group\"><input type=\"text\" class=\"form-control\" name=\"MobileNo\" id=\"mob1\" value2=\"Main\" placeholder=\"Main\"></div></div>";
                     tem += textboxg;
                 }
                 else {
@@ -351,7 +366,7 @@
                         var labelg = " <br /><br /><br /><div id=\"moblabel\" class=\"col-sm-2\"><div class=\"form-group\"><a onclick=\"abc()\" data-toggle=\"popover\" style=\"font-size:large\" data-container=\"body\" data-original-title=\"Numbers\" data-placement=\"bottom\" data-html=\"true\" data-content=\"Mobilebun\">Home Fax</a></div></div>";
                         tem += labelg;
                         // $('#mobtextbox').html("<input type=\"text\" class=\"form-control\" value2=\"Mobile\" name=\"MobileNo\" id=\"Name\" placeholder=\"Enter Mobile No.\"><br />");
-                        var textboxg = "<div id=\"mobtextbox\" class=\"col-sm-10\"><div class=\"form-group\"><input type=\"text\" class=\"form-control\" name=\"MobileNo\" id=\"mob1\" placeholder=\"Home Fax\"></div></div>";
+                        var textboxg = "<div id=\"mobtextbox\" class=\"col-sm-10\"><div class=\"form-group\"><input type=\"text\" class=\"form-control\" name=\"MobileNo\" id=\"mob1\" value2=\"Home Fax\" placeholder=\"Home Fax\"></div></div>";
                         tem += textboxg;
                     }
                     else {
@@ -361,7 +376,7 @@
                             var labelg = " <br /><br /><br /><div id=\"moblabel\" class=\"col-sm-2\"><div class=\"form-group\"><a onclick=\"abc()\" data-toggle=\"popover\" style=\"font-size:large\" data-container=\"body\" data-original-title=\"Numbers\" data-placement=\"bottom\" data-html=\"true\" data-content=\"Mobilebun\">Work Fax</a></div></div>";
                             tem += labelg;
                             // $('#mobtextbox').html("<input type=\"text\" class=\"form-control\" value2=\"Mobile\" name=\"MobileNo\" id=\"Name\" placeholder=\"Enter Mobile No.\"><br />");
-                            var textboxg = "<div id=\"mobtextbox\" class=\"col-sm-10\"><div class=\"form-group\"><input type=\"text\" class=\"form-control\" name=\"MobileNo\" id=\"mob1\" placeholder=\"Work Fax\"></div></div>";
+                            var textboxg = "<div id=\"mobtextbox\" class=\"col-sm-10\"><div class=\"form-group\"><input type=\"text\" class=\"form-control\" name=\"MobileNo\" id=\"mob1\" value2=\"Work Fax\" placeholder=\"Work Fax\"></div></div>";
                             tem += textboxg;
                         }
                         else {
@@ -371,7 +386,7 @@
                                 var labelg = " <br /><br /><br /><div id=\"moblabel\" class=\"col-sm-2\"><div class=\"form-group\"><a onclick=\"abc()\" data-toggle=\"popover\" style=\"font-size:large\" data-container=\"body\" data-original-title=\"Numbers\" data-placement=\"bottom\" data-html=\"true\" data-content=\"Mobilebun\">Pager</a></div></div>";
                                 tem += labelg;
                                 // $('#mobtextbox').html("<input type=\"text\" class=\"form-control\" value2=\"Mobile\" name=\"MobileNo\" id=\"Name\" placeholder=\"Enter Mobile No.\"><br />");
-                                var textboxg = "<div id=\"mobtextbox\" class=\"col-sm-10\"><div class=\"form-group\"><input type=\"text\" class=\"form-control\" name=\"MobileNo\" id=\"mob1\" placeholder=\"Pager\"></div></div>";
+                                var textboxg = "<div id=\"mobtextbox\" class=\"col-sm-10\"><div class=\"form-group\"><input type=\"text\" class=\"form-control\" name=\"MobileNo\" id=\"mob1\" value2=\"Pager\" placeholder=\"Pager\"></div></div>";
                                 tem += textboxg;
                             }
                             else {
@@ -381,7 +396,7 @@
                                     var labelg = " <br /><br /><br /><div id=\"moblabel\" class=\"col-sm-2\"><div class=\"form-group\"><a onclick=\"abc()\" data-toggle=\"popover\" style=\"font-size:large\" data-container=\"body\" data-original-title=\"Numbers\" data-placement=\"bottom\" data-html=\"true\" data-content=\"Mobilebun\">Other</a></div></div>";
                                     tem += labelg;
                                     // $('#mobtextbox').html("<input type=\"text\" class=\"form-control\" value2=\"Mobile\" name=\"MobileNo\" id=\"Name\" placeholder=\"Enter Mobile No.\"><br />");
-                                    var textboxg = "<div id=\"mobtextbox\" class=\"col-sm-10\"><div class=\"form-group\"><input type=\"text\" class=\"form-control\" name=\"MobileNo\" id=\"mob1\" placeholder=\"Other\"></div></div>";
+                                    var textboxg = "<div id=\"mobtextbox\" class=\"col-sm-10\"><div class=\"form-group\"><input type=\"text\" class=\"form-control\" name=\"MobileNo\" id=\"mob1\" value2=\"Pager\" placeholder=\"Other\"></div></div>";
                                     tem += textboxg;
                                 } else {
 
@@ -391,7 +406,7 @@
                                         var labelg = " <br /><br /><br /><div id=\"moblabel\" class=\"col-sm-2\"><div class=\"form-group\"><a onclick=\"abc()\" data-toggle=\"popover\" style=\"font-size:large\" data-container=\"body\" data-original-title=\"Numbers\" data-placement=\"bottom\" data-html=\"true\" data-content=\"Mobilebun\">"+person+"</a></div></div>";
                                         tem += labelg;
                                         // $('#mobtextbox').html("<input type=\"text\" class=\"form-control\" value2=\"Mobile\" name=\"MobileNo\" id=\"Name\" placeholder=\"Enter Mobile No.\"><br />");
-                                        var textboxg = "<div id=\"mobtextbox\" class=\"col-sm-10\"><div class=\"form-group\"><input type=\"text\" class=\"form-control\" name=\"MobileNo\" id=\"mob1\" placeholder=\"" + person + "\"></div></div>";
+                                        var textboxg = "<div id=\"mobtextbox\" class=\"col-sm-10\"><div class=\"form-group\"><input type=\"text\" class=\"form-control\" name=\"MobileNo\" id=\"mob1\" value2=\"Pager\" placeholder=\"" + person + "\"></div></div>";
                                         tem += textboxg;
 
 
@@ -416,4 +431,25 @@
         $("#num").append(tem);
 
     });
+
+
+
+
+
+        $('#tryg').click(function () {
+            var ftag = "";
+            $('input[name="MobileNo"]').each(function () {
+                if ($(this).val().length != 0) {
+
+
+                    ftag += this.value + ";"+ $(this).attr('value2') + ",";
+                }
+            });
+          
+
+            alert(ftag);
+          //  $.getJSON("addmobilelabels?f=" + ftag + "&i=" + cid, function (data) { });
+        });
+
+    
 </script>
